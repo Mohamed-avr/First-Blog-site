@@ -1,0 +1,197 @@
+ 
+<header class="page-header">
+  <div class="container-2">
+    <div class="page-header__content">
+ 
+{# start  #}
+    <div class="topNav"> 
+      
+      {# start of the flexed #}
+      <div class="flexedOne">
+          {# btn #}
+         <button class="menu-ham" id="menu-ham"> 
+           <div class="oneX"> </div>
+           <div class="towX"> </div>
+           <div class="threeX"> </div>
+         </button>
+       {# name an d date   #}
+        <div class="topNavBlogName">  
+          <span class='BlogName' >   مدونة محمد </span>
+        </div>
+      </div>  
+      {# end of the flexed #}
+
+ 
+    {# start of the flexed  02 #}
+          <div class="flexedTow"> 
+                    {# dark mode   #}
+      <div class="topNavBlogBarSearch">
+           <button class='DarkmodeButton ' id='btnDarkMode'>  الوضع الليلي  <img src="/assets/icons/darkmode.png" alt="">  </button>
+      </div>
+     {#  social media links #}
+      <div class="topNavBlogLinks"> 
+         <ul>
+          <li>
+            <a href="https://www.instagram.com/mohammed_boukhanouf/"> <img src="/assets/icons/icon-1.png" alt="">
+            </a>
+          </li>
+          
+          <li>
+            <a href="https://www.facebook.com/profile.php?id=100014856492651"> <img  src="/assets/icons/icon-2.png" alt="">
+            </a>
+          </li>
+          
+          <li>
+            <a href="https://mobile.twitter.com/MohamedBoukhan5"> <img  src="/assets/icons/icon-3.png" alt="">
+            </a>
+          </li>
+          
+          <li>
+            <a href="https://www.behance.net/mohmdvrtl"> <img  src="/assets/icons/icon-4.png" alt="">
+            </a>
+          </li>
+
+
+         </ul>
+      </div>
+      {# end  #}
+          </div>
+    {# end of the flexed 02 #}
+
+
+
+   
+
+
+ 
+ {#  start  #}
+    </div>
+
+      <nav class='BtmNav closer'>
+        <ul role="list" class="nav-list flex-group">
+            <li>
+              <a href="/blog">المقاللات</a>
+            </li>
+            <li>
+              <a href="/courses">الكورسات</a> 
+            </li>
+            <li>
+              <a href="/aboutBlog">المدونة</a> 
+            </li>
+        </ul>
+      </nav>
+  {# end #}
+      
+     
+
+
+    </div>
+  </div>
+</header>
+
+
+<script>
+
+// defining Elements #
+const  buttonNavbar = document.querySelector(".menu-ham");
+const NavBarContainer = document.querySelector(".topNav");
+const SecondContainer = document.querySelector(".flexedTow"); 
+const DarkmodeButton = document.getElementById("btnDarkMode");
+const NavbarBottom = document.querySelector(".BtmNav")
+// selectChildren
+const childOne = document.querySelector('.oneX')
+const childTow = document.querySelector('.towX')
+const childThree = document.querySelector('.threeX'); 
+
+// section for date 
+const spanOfDate = document.querySelector(".BlogName"); 
+
+
+
+// the event  
+buttonNavbar.addEventListener('click' , function() {
+
+  childOne.classList.toggle("one"); 
+    childTow.classList.toggle("tow"); 
+    childThree.classList.toggle("three");   
+
+
+    if( childOne.classList.contains("one")) { 
+     // add styles
+    NavbarBottom.classList.remove("closer");
+    SecondContainer.classList.add("appearFlexedTow");
+
+    } else { 
+     NavbarBottom.classList.add("closer")
+      SecondContainer.classList.remove("appearFlexedTow")
+    } 
+  
+}) 
+
+// add js date 
+ 
+ function showTime() {
+  let  getDate = new Date() ;  
+    let  getYear = getDate.getFullYear();
+     let getMonth = getDate.getMonth();
+       let getDay = getDate.getDay();
+         let gethours = getDate.getHours();
+           let getMinutes = getDate.getMinutes();
+             let getSeconds = getDate.getSeconds();
+             
+
+           
+               if(getMonth<10) {
+             getMonth = "0" + getMonth ;
+             }
+               if(getDay<10) {
+             getDay = "0" + getDay ;
+             }
+
+             if(gethours<10) {
+             gethours = "0" + gethours ;
+             }
+               if(getMinutes<10) {
+             getMinutes = "0" + getMinutes ;
+             }
+               if(getSeconds<10) {
+             getSeconds = "0" + getSeconds ;
+             }
+                      
+            spanOfDate.textContent = `  مدونة محمد | ${gethours}:${getMinutes}:${getSeconds}` // ${getDay }/${getMonth}/${getYear}
+            
+
+ } 
+   
+   
+ 
+
+  window.onload = function() {
+    "use strict";
+    setInterval(showTime, 1000);
+
+
+}
+
+
+ 
+
+
+// dark mode btn 
+DarkmodeButton.addEventListener('click' , function() {
+
+alert("dark mode will be avilable soon !")
+
+  
+})
+
+
+
+
+
+
+
+
+
+
+</script>

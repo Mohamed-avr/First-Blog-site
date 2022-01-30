@@ -1,0 +1,6 @@
+{
+    "emmet.includeLanguages": {
+        "explain text": "html",
+        "njk": "html"
+    }
+}

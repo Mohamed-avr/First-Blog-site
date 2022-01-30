@@ -1,0 +1,24 @@
+--- 
+title : Blog 
+layout : 'base.njk'
+--- 
+
+
+       
+<div class="section container">
+<h3 class="section-title titleStyle ">المقالات</h3>
+
+<ul role="list"  class="articles_list flow">
+
+  {%-  for post in collections.post  | reverse  -%} 
+     {% include 'article-snippet.njk' %}
+  {% endfor %}
+
+</ul>
+</div>
+
+{# for puting the date 
+   <h6> {{post.date | postDate }}</h6>
+#}
+
+ 
